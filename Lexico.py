@@ -36,7 +36,7 @@ def operaciones_relaciones(texto, linea):
     mayorigual=r"\b>=\b"
     igualdad = r"\b==\b"
     distinto =r"\b!=\b"
-    asignacion =r"\D="
+    asignacion =r"\D=\s"
     val1 = re.findall(menor, texto)
     val2 = re.findall(menorigual, texto)
     val3 = re.findall(mayor, texto)
@@ -112,7 +112,7 @@ def datos(text, linea):
     im(numero,linea,"Numero: ")
     im(cadena, linea, "Cadena: ")
     im(bolean ,linea,"Boleano: ")
-    #im(array_data,linea,"Array: ")
+    im(array_data,linea,"Array: ")
            
 
 print("Ingresa 1 para palabras reservadas")
