@@ -115,5 +115,84 @@ def datos(text, linea):
     #im(array_data,linea,"Array: ")
            
 
+print("Ingresa 1 para palabras reservadas")
+print("Ingresa 2 para operadores aritmeticos")
+print("Ingresa 3 para operadores relacionales")
+print("Ingresa 4 para bloques")
+print("Ingresa 5 para variables")
+print("Ingresa 6 para tipos de datos")
+texto = int(input("Digita: "))
+
+while texto != 0: 
+    if texto == 1:
+        print("\nPalabras reservadas")
+        i = 0
+        archivo = open("texto.js","r")
+        for ii in archivo:
+            i+=1
+            palabras_reservadas(ii,i)
+        archivo.close()
+    
+    
+    if texto == 2:
+        print("\nOperadores aritmeticos")
+        i = 0
+        archivo = open("texto.js", "r")
+
+        for ii in archivo:
+            i+=1
+            operadores_aritmeticos(ii,i)
+        archivo.close()
+    
+    if texto == 3:
+        print("\nOperadores relacionales")
+        
+        archivo = open("texto.js","r")
+        i = 0
+        for ii in archivo:
+            i+=1
+            operaciones_relaciones(ii,i)
+        archivo.close()
+
+    if texto == 4:
+        print("\nBloques")
+        archivo = open("texto.js","r")
+        i = 0
+        for ii in archivo:
+            i+=1
+            bloques(ii,i)
+        archivo.close()
+
+    if texto == 5:
+        print("\nVariables")
+        archivo = open("texto.js","r")
+        i = 0
+        for ii in archivo:
+            i+=1
+            variables_va(ii,i)
+        archivo.close()
+    if texto == 6:
+        print("\nTipos de datos")
+        archivo = open("texto.js","r")
+        i = 0
+        for ii in archivo:
+            i+=1
+            datos(ii,i)
+            
+        archivo.close()
+       
+    if texto != 1 or texto != 2 or texto !=3 or texto !=4 or texto != 5 or texto != 6:
+        print("\n***Ingresa un digito valido***")
+
+    print("Ingresa 1 para palabras reservadas")
+    print("Ingresa 2 para operadores aritmeticos")
+    print("Ingresa 3 para operadores relacionales")
+    print("Ingresa 4 para bloques")
+    print("Ingresa 5 para variables")
+    print("Ingresa 6 para tipos de datos")
+    print("0 para salir")
+    texto = int(input("Digita: "))
+    
+
     
 
