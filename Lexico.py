@@ -27,5 +27,93 @@ def operadores_aritmeticos(texto, linea):
     if respuesta != []:
         for i in respuesta:
             print("Operadores aritmeticos: ",i, " Linea: ",linea)
+            
+def operaciones_relaciones(texto, linea):
+    
+    menor = r"\b<\b"
+    menorigual = r"\b<=\b"
+    mayor = r"\b>\b"
+    mayorigual=r"\b>=\b"
+    igualdad = r"\b==\b"
+    distinto =r"\b!=\b"
+    asignacion =r"\D="
+    val1 = re.findall(menor, texto)
+    val2 = re.findall(menorigual, texto)
+    val3 = re.findall(mayor, texto)
+    val4 = re.findall(mayorigual, texto)
+    val5 = re.findall(igualdad, texto)
+    val6 = re.findall(distinto, texto)
+    val7 = re.findall(asignacion, texto)
+    im(val1,linea,"Menor que: ")
+    im(val2,linea,"Menor igual: ")
+    im(val3,linea,"Mayor: ")
+    im(val4,linea,"Mayor igual: ")
+    im(val5,linea,"Igualdad: ")
+    im(val6,linea,"Distinto: ")
+    im(val7,linea,"Asignacion: ")
+    
+def bloques(texto, linea):
+    #linea
+    inicio_parentesis  = r"\("
+    final_parentesis  = r"\)"
+
+    inicio_corchete  = r'\['
+    final_corchete  = r'\]'
+    inicio_bloque   = r'{'
+    final_bloque  = r'}'
+
+    comillas_dobles    = r'\"'
+    comillas_simples = r'\''
+
+    val1 = re.findall(inicio_parentesis,texto)
+    im(val1,linea,"Inicio parentesis: ")
+    val2 = re.findall(final_parentesis,texto)
+    im(val2,linea,"Fin parentesis: ")
+
+    val3 = re.findall(inicio_corchete,texto)
+    im(val3, linea, "Inicio corchetes: ")
+    val4 = re.findall(final_corchete,texto)
+    im(val4,linea,"Final corchetes: ")
+
+    val5 = re.findall(inicio_bloque,texto)
+    im(val5,linea,"Inicio bloque: ")
+    val6 = re.findall(final_bloque,texto)
+    im(val6,linea,"Final bloque: ")
+    val7 = re.findall(comillas_dobles,texto)
+    im(val7,linea,"Comillas dobles: ")
+    val8 = re.findall(comillas_simples,texto)
+    im(val8,linea,"Comillas simples: ")
+
+def variables_va(texto, linea):
+   
+    variables_var = r"var*.[a-zA-Z_][a-zA-Z0_9]*"
+    variables_let = r"let.[a-zA-Z_][a-zA-Z0_9]*"
+
+    val1 = re.findall(variables_var,texto)
+    val2 = re.findall(variables_let,texto)
+    respuesta  = val1+val2
+    im(respuesta,linea,"Variable: ")
+
+
+def datos(text, linea):
+    #linea
+    entero_decimales = r"[+-]?\d+\.?\d*"
+    cadena_caracteres = r"[\b\",\b\']\w.+[\"\b,\'\b]"
+    boleanos = r"true|false"
+    array = r"\[[\W,\w].+\]"
+    
+    
+    numero= re.findall(entero_decimales, text)
+    
+    cadena = re.findall(cadena_caracteres,text)
+    bolean = re.findall(boleanos,text)
+    array_data = re.findall(array, text)
+    
+    im(numero,linea,"Numero: ")
+    im(cadena, linea, "Cadena: ")
+    im(bolean ,linea,"Boleano: ")
+    #im(array_data,linea,"Array: ")
+           
+
     
 
