@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+
+{
+    float a,b;
+    double c;
+
+if(a=b{
+    
+}
+
+
+    do{
+    cout << "ingrese el numero que se dividira: " << endl;cin>>a;
+    cout << "ingrese el numero que se dividira: " << endl;cin>>b;
+    if(b != 0){
+            c=a/b;
+        cout << "El resultado es : "<< c<<endl<<endl;
+        cout<<"*********************************************"<<endl;
+    }else{
+        cout << "no hay divison entre 0, o ha digitado un caracter"<<endl<<endl;
+        cout << "___________________________________________________________"<<endl;
+    }}while(b == 0 || b !=0);
+
+
+
+    return 0;
+}
